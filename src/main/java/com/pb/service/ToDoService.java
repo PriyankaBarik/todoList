@@ -1,6 +1,7 @@
 package com.pb.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,6 +53,12 @@ public class ToDoService {
 		todo.setComplete(false);
 		toDoRepo.save(todo);
 	}
+
+	public Optional<ToDo> getById(Long id) {
+		// TODO Auto-generated method stub
+		return toDoRepo.findById(id);
+	}
+
 
 //	public List<ToDo> getAllNotDoneList() {
 //		
