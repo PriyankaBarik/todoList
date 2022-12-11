@@ -64,10 +64,10 @@ public class ToDoController {
 		return new ResponseEntity<>(new ApiResponce(true, "mark as done"), HttpStatus.OK);
 	}
 
-	 @GetMapping("/notdonelist")
-	 public ResponseEntity<List<ToDo>> getNotdoneList(){
-			
-			List<ToDo> todoItem=toDoService.getAllNotDoneList(false);
-			return new ResponseEntity<>(todoItem,HttpStatus.OK);
-		}
+	@GetMapping("/notdonelist")
+	public ResponseEntity<List<ToDo>> getNotdoneList() {
+
+		List<ToDo> todoItem = toDoService.getAllNotDoneList(false);
+		return new ResponseEntity<>(todoItem, HttpStatus.OK);
+	}
 }

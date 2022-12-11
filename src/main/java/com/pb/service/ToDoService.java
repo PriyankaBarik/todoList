@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.pb.model.ToDo;
 import com.pb.repo.ToDoRepo;
 
-
 @Service
 public class ToDoService {
 
@@ -38,8 +37,8 @@ public class ToDoService {
 
 	public void setTaskCompleted(Long id) {
 		ToDo todo = toDoRepo.findById(id).get();
-		if(id==null) {
-		System.out.println("id is not presennt");
+		if (id == null) {
+			System.out.println("id is not presennt");
 		}
 		todo.setComplete(true);
 		toDoRepo.save(todo);
@@ -47,21 +46,20 @@ public class ToDoService {
 
 	public void setTaskNotCompleted(Long id) {
 		ToDo todo = toDoRepo.findById(id).get();
-		if(id==null) {
-		System.out.println("id is not presennt");
+		if (id == null) {
+			System.out.println("id is not presennt");
 		}
 		todo.setComplete(false);
 		toDoRepo.save(todo);
 	}
 
 	public Optional<ToDo> getById(Long id) {
-		// TODO Auto-generated method stub
+
 		return toDoRepo.findById(id);
 	}
 
-
 	public List<ToDo> getAllNotDoneList(boolean complete) {
-		
+
 		return toDoRepo.findByComplete(false);
 	}
 
