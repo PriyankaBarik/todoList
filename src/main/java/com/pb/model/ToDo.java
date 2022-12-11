@@ -42,7 +42,7 @@ public class ToDo {
 
 	public ToDo() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public Long getId() {
@@ -96,7 +96,7 @@ public class ToDo {
 	public String getStatus() {
 		if (dueDate.before(new Date()))
 			return "expired";
-		return ""; // or what ever are statuses
+		return "Not expired"; // or what ever are statuses
 	}
 
 	public ToDo(String description) {
