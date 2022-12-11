@@ -60,9 +60,9 @@ public class ToDoService {
 	}
 
 
-//	public List<ToDo> getAllNotDoneList() {
-//		
-//		return toDoRepo.findBynotDone();
-//	}
+	public List<ToDo> getAllNotDoneList(boolean complete) {
+		
+		return toDoRepo.findByComplete(false);
+	}
 
 }

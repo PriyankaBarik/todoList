@@ -10,7 +10,9 @@ import com.pb.model.ToDo;
 
 public interface ToDoRepo extends JpaRepository<ToDo, Long> {
 
-//	@Query( value="SELECT t FROM TODOTABLE t  WHERE t.complete=false")
-//	List<ToDo> findBynotDone();
+	//@Query( value="SELECT t FROM TODOTABLE t  WHERE t.complete=false")
+	//List<ToDo> findBynotDone(boolean complete);
+	
+	List<ToDo> findByComplete(boolean complete);
 
 }
