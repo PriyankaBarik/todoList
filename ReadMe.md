@@ -17,6 +17,7 @@ b)Assumptions-
 2.By default To-Do is "Done"
 3.Created date is current date.
 4.Edited date is current date as well and End date needs to be filled in the following format=YYYY-MM-DD
+5. date will "expired" when due date is over
 
 **********************************************************************************
 Tech Stacks:
@@ -47,3 +48,5 @@ GET=/markNotDone/{id}
 
 
 Swagger api=http://localhost:8089/swagger-ui.html#/
+
+h2console= http://localhost:8089/h2-console/

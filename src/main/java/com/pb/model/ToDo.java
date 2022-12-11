@@ -2,12 +2,15 @@ package com.pb.model;
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
 
@@ -32,7 +35,10 @@ public class ToDo {
 
 	@FutureOrPresent
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate dueDate;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dueDate;
+
+	private String status;
 
 	public ToDo() {
 		super();
@@ -79,12 +85,18 @@ public class ToDo {
 		this.modifiedDate = modifiedDate;
 	}
 
-	public LocalDate getDueDate() {
+	public Date getDueDate() {
 		return dueDate;
 	}
 
-	public void setDueDate(LocalDate dueDate) {
+	public void setDueDate(Date dueDate) {
 		this.dueDate = dueDate;
+	}
+
+	public String getStatus() {
+		if (dueDate.before(new Date()))
+			return "expired";
+		return ""; // or what ever are statuses
 	}
 
 	public ToDo(String description) {
